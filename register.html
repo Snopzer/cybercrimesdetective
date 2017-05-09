@@ -9,6 +9,117 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<style>
+			
+			
+			
+			h2 		 { 
+			text-align:center; 
+			margin-bottom:50px; 
+			}
+			h2 small { 
+			font-weight:normal; 
+			color:#888; 
+			display:block; 
+			}
+			.footer 	{ text-align:center; }
+			.footer a  { color:#53B2C8; }
+			
+			/* form starting stylings ------------------------------- */
+			.group 			  { 
+			position:relative; 
+			margin-bottom:20px;
+			max-width: 30 %;
+			margin-left:32px;
+			}
+			input 				{
+			font-size:18px;
+			padding:10px 10px 10px 5px;
+			display:block;
+			width:300px;
+			border:none;
+			border-bottom:1px solid #757575;
+			}
+			input:focus 		{ outline:none; }
+			
+			/* LABEL ======================================= */
+			label 				 {
+			color:#999; 
+			font-size:18px;
+			font-weight:normal;
+			position:absolute;
+			pointer-events:none;
+			left:5px;
+			top:10px;
+			transition:0.2s ease all; 
+			-moz-transition:0.2s ease all; 
+			-webkit-transition:0.2s ease all;
+			}
+			
+			/* active state */
+			input:focus ~ label, input:valid ~ label 		{
+			top:-20px;
+			font-size:14px;
+			color:#5264AE;
+			}
+			
+			/* BOTTOM BARS ================================= */
+			.bar 	{ position:relative; display:block; width:300px; }
+			.bar:before, .bar:after 	{
+			content:'';
+			height:2px; 
+			width:0;
+			bottom:1px; 
+			position:absolute;
+			background:#5264AE; 
+			transition:0.2s ease all; 
+			-moz-transition:0.2s ease all; 
+			-webkit-transition:0.2s ease all;
+			}
+			.bar:before {
+			left:50%;
+			}
+			.bar:after {
+			right:50%; 
+			}
+			
+			/* active state */
+			input:focus ~ .bar:before, input:focus ~ .bar:after {
+			width:50%;
+			}
+			
+			/* HIGHLIGHTER ================================== */
+			.highlight {
+			position:absolute;
+			height:60%; 
+			width:100px; 
+			top:25%; 
+			left:0;
+			pointer-events:none;
+			opacity:0.5;
+			}
+			
+			/* active state */
+			input:focus ~ .highlight {
+			-webkit-animation:inputHighlighter 0.3s ease;
+			-moz-animation:inputHighlighter 0.3s ease;
+			animation:inputHighlighter 0.3s ease;
+			}
+			
+			/* ANIMATIONS ================ */
+			@-webkit-keyframes inputHighlighter {
+			from { background:#5264AE; }
+			to 	{ width:0; background:transparent; }
+			}
+			@-moz-keyframes inputHighlighter {
+			from { background:#5264AE; }
+			to 	{ width:0; background:transparent; }
+			}
+			@keyframes inputHighlighter {
+			from { background:#5264AE; }
+			to 	{ width:0; background:transparent; }
+			}
+		</style>
 	</head>
 	<body class="left-sidebar">
 		<div id="page-wrapper">
@@ -66,14 +177,14 @@
 									<li>West Bengal</li>
 								</ul>
 								<!--<h3>Andhra Pradesh:</h3>
-								<ul class="contact">
+									<ul class="contact">
 									
-										<p> 
-											Address : Cyber Crime Police Station,<br /> 
-											3rd Floor, CID Building, <br />
-											AC Guards,<br /> 
-											Hyderabad -500 004.<br />
-										</p>
+									<p> 
+									Address : Cyber Crime Police Station,<br /> 
+									3rd Floor, CID Building, <br />
+									AC Guards,<br /> 
+									Hyderabad -500 004.<br />
+									</p>
 									
 								</ul>-->
 							</section>
@@ -85,30 +196,97 @@
 							<article class="box post">
 								<section>
 									<header>
-									<h3 class="blink-tag center">Cyber Crimes - <span class="green">Prevention</span>, <span class="orange">Reporting </span>&amp; <span class="red">Detection</span>.</h3>
+										<h3 class="blink-tag center">Cyber Crimes - <span class="green">Prevention</span>, <span class="orange">Reporting </span>&amp; <span class="red">Detection</span>.</h3>
 									</header>
 									
 									<h3 class="center">Register</h3>
-									<ul>
-										<li>
-											<div class="input-group">
-											  <span class="input-group-addon" id="basic-addon1">@</span>
-											  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+									<ul style="list-style: none; margin-top: 10px;">
+										<!--<li>
+											<div class="col-sm-4">
+												<div class="input-group" >
+													<div class="col-sm-2">	
+													<span class="input-group-addon" id="basic-addon1"><strong>Name :</strong></span></div>
+													<div class="col-sm-2">
+														<input type="text" class="form-control" placeholder="FULL Name" aria-describedby="basic-addon1">
+													</div>
+												</div>
 											</div>
 										</li>
 										
 										
 										<li>
-											<div class="input-group">
-											  <span class="input-group-addon" id="basic-addon1">@</span>
-											  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+											<div class="input-group" >
+												<span class="input-group-addon" id="basic-addon1"><strong>Designation :</strong></span>
+												<input type="text" class="form-control" placeholder="Designation" aria-describedby="basic-addon1" style="margin-left: 12%;">
 											</div>
 										</li>
 										
-										
+										<li>
+											<div class="input-group" >
+												<span class="input-group-addon" id="basic-addon1"><strong>place of posting :</strong></span>
+												<input type="text" class="form-control" placeholder="place of posting" aria-describedby="basic-addon1" style="margin-left: 5%;">
+											</div>
+										</li>
 										
 										<li>
-										<input type="submit">
+											<div class="input-group" >
+												<span class="input-group-addon" id="basic-addon1"><strong>e-mail ID :</strong></span>
+												<input type="text" class="form-control" placeholder="e-mail ID" aria-describedby="basic-addon1" style="margin-left: 18%;">
+											</div>
+										</li>
+										<li>
+											<div class="input-group" >
+												<span class="input-group-addon" id="basic-addon1"><strong>Phone number :</strong></span>
+												<input type="text" class="form-control" placeholder="Phone number " aria-describedby="basic-addon1" style="margin-left: 7%;">
+											</div>
+										</li>-->
+										<div class="container">
+											
+											
+											
+											<form>
+												
+												<div class="group">      
+													<input type="text"  style="max-width: 100%;" required>
+													<span class="highlight" style="max-width: 30%;"></span>
+													<span class="bar" style="max-width: 30%;"></span>
+													<label>Name</label>
+												</div>
+												
+												<div class="group">      
+													<input type="text" style="max-width: 100%;" required>
+													<span class="highlight" style="max-width: 100%;"></span>
+													<span class="bar" style="max-width: 100%;"></span>
+													<label>Email</label>
+												</div>
+												<div class="group">      
+													<input type="text" style="max-width: 100%;" required>
+													<span class="highlight" style="max-width: 100%;"></span>
+													<span class="bar" style="max-width: 100%;"></span>
+													<label>Designation</label>
+												</div>
+												<div class="group">      
+													<input type="text" style="max-width: 100%;" required>
+													<span class="highlight" style="max-width: 100%;"></span>
+													<span class="bar" style="max-width: 100%;"></span>
+													<label>place of posting</label>
+												</div>
+												<div class="group">      
+													<input type="text" style="max-width: 100%;" required>
+													<span class="highlight" style="max-width: 100%;"></span>
+													<span class="bar" style="max-width: 100%;"></span>
+													<label>Phone number</label>
+												</div>
+												
+												
+											</form>
+											
+										
+											
+										</div>
+										<li>
+											<input type="submit" style="margin-top: 0px;
+											margin-left: 33px; max-width: 81%;">
 										</li>
 									</ul>
 									
@@ -118,11 +296,11 @@
 						</div>
 						<div class="4u 12u(mobile)">
 							<!--<section class="box">
-							
+								
 								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
 								<header>
-									<h3 class="center">FORUM</h3>
-									<h3 class="center">COMING SOON</h3>
+								<h3 class="center">FORUM</h3>
+								<h3 class="center">COMING SOON</h3>
 								</header>
 								
 							</section>-->
@@ -161,28 +339,28 @@
 
 <script type="text/javascript">
 	var app = angular.module('myApp', ['ngDialog']);
-
+	
 	app.controller('MainCtrl', function ($scope, ngDialog) {
 		$scope.clickToOpen = function () {
 			ngDialog.open({
-			
-			template:'<div class="ngdialog-message">'+
-					'<h3>Andhra Pradesh</h3>'+
-					'<p> </p>'+
-					'<p>Address : Cyber Crime Police Station,<br /> 3rd Floor, CID Building, <br />AC Guards,<br /> Hyderabad -500 004</p>'+
-					'</div>'+
-					'<div class="ngdialog-buttons"><button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button></div>',
+				
+				template:'<div class="ngdialog-message">'+
+				'<h3>Andhra Pradesh</h3>'+
+				'<p> </p>'+
+				'<p>Address : Cyber Crime Police Station,<br /> 3rd Floor, CID Building, <br />AC Guards,<br /> Hyderabad -500 004</p>'+
+				'</div>'+
+				'<div class="ngdialog-buttons"><button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button></div>',
 				plain: true,
 				className: 'ngdialog-theme-default'
-							}); 
+			}); 
 			
 		};
 	});
-
+	
 	
 	$("#statesList").hide();
 	$("#showStatesList").on("click",function(){
 		$("#statesList").show();
 	});
 	
-	</script>
+</script>
