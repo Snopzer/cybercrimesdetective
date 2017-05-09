@@ -11,8 +11,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<style>
 			
-			
-			
 			h2 		 { 
 			text-align:center; 
 			margin-bottom:50px; 
@@ -139,7 +137,7 @@
 				<div class="container site-container">
 					<div class="eh row">
 						<div class="4u 12u(mobile)">
-							<section class="box" ng-controller="MainCtrl">
+							<!--<section class="box" ng-controller="MainCtrl">
 								<header>
 									<h3><a id="showStatesList">Cyber Crime Units / Police Stations / Cells in India</a></h3>
 								</header>
@@ -186,8 +184,8 @@
 									Hyderabad -500 004.<br />
 									</p>
 									
-								</ul>-->
-							</section>
+								</ul>
+							</section>-->
 							
 						</div>
 						<div class="4u 12u(mobile) important(mobile)">
@@ -198,8 +196,9 @@
 									<header>
 										<h3 class="blink-tag center">Cyber Crimes - <span class="green">Prevention</span>, <span class="orange">Reporting </span>&amp; <span class="red">Detection</span>.</h3>
 									</header>
-									
+									<header>
 									<h3 class="center">Register</h3>
+									</header>
 									<ul style="list-style: none; margin-top: 10px;">
 										<!--<li>
 											<div class="col-sm-4">
@@ -240,54 +239,36 @@
 												<input type="text" class="form-control" placeholder="Phone number " aria-describedby="basic-addon1" style="margin-left: 7%;">
 											</div>
 										</li>-->
-										<div class="container">
-											
-											
 											
 											<form>
 												
 												<div class="group">      
-													<input type="text"  style="max-width: 100%;" required>
-													<span class="highlight" style="max-width: 30%;"></span>
-													<span class="bar" style="max-width: 30%;"></span>
+													<input type="text"  required>
 													<label>Name</label>
 												</div>
 												
 												<div class="group">      
-													<input type="text" style="max-width: 100%;" required>
-													<span class="highlight" style="max-width: 100%;"></span>
-													<span class="bar" style="max-width: 100%;"></span>
+													<input type="text" required>
 													<label>Email</label>
 												</div>
 												<div class="group">      
-													<input type="text" style="max-width: 100%;" required>
-													<span class="highlight" style="max-width: 100%;"></span>
-													<span class="bar" style="max-width: 100%;"></span>
+													<input type="text" required>
 													<label>Designation</label>
 												</div>
 												<div class="group">      
-													<input type="text" style="max-width: 100%;" required>
-													<span class="highlight" style="max-width: 100%;"></span>
-													<span class="bar" style="max-width: 100%;"></span>
+													<input type="text" required>
 													<label>place of posting</label>
 												</div>
 												<div class="group">      
-													<input type="text" style="max-width: 100%;" required>
-													<span class="highlight" style="max-width: 100%;"></span>
-													<span class="bar" style="max-width: 100%;"></span>
+													<input type="text" required>
 													<label>Phone number</label>
 												</div>
 												
+											<input type="submit" style="margin-top: 0px;
+											margin-left: 33px; max-width: 81%;">
 												
 											</form>
 											
-										
-											
-										</div>
-										<li>
-											<input type="submit" style="margin-top: 0px;
-											margin-left: 33px; max-width: 81%;">
-										</li>
 									</ul>
 									
 								</section>
@@ -331,36 +312,5 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/skel-viewport.min.js"></script>
 		<script src="assets/js/util.js"></script>
-		<link rel="stylesheet" href="ngDialog-master/css/ngDialog.min.css">
-		<link rel="stylesheet" href="ngDialog-master/css/ngDialog-theme-default.min.css">
-		<script src="ngDialog-master/js/ngDialog.min.js"></script>
 	</body>
 </html>
-
-<script type="text/javascript">
-	var app = angular.module('myApp', ['ngDialog']);
-	
-	app.controller('MainCtrl', function ($scope, ngDialog) {
-		$scope.clickToOpen = function () {
-			ngDialog.open({
-				
-				template:'<div class="ngdialog-message">'+
-				'<h3>Andhra Pradesh</h3>'+
-				'<p> </p>'+
-				'<p>Address : Cyber Crime Police Station,<br /> 3rd Floor, CID Building, <br />AC Guards,<br /> Hyderabad -500 004</p>'+
-				'</div>'+
-				'<div class="ngdialog-buttons"><button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button></div>',
-				plain: true,
-				className: 'ngdialog-theme-default'
-			}); 
-			
-		};
-	});
-	
-	
-	$("#statesList").hide();
-	$("#showStatesList").on("click",function(){
-		$("#statesList").show();
-	});
-	
-</script>
