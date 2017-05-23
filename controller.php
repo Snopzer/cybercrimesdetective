@@ -25,43 +25,62 @@
 			$response['success'] = false;
 		}
 		$ChecMailAct = $conn->query("SELECT * FROM tbl_users where user_email='" . $email . "' and user_status =0 ");
-		$mailCount = mysqli_num_rows($ChecMailAct);
-		if ($mailCount >= 1) {
+			$mailCount = mysqli_num_rows($ChecMailAct);
+			if ($mailCount >= 1) {
 			$response['message'] = "Your Account Is Not Activated.! Please Try Again";
 			$response['success'] = false;
 		}
-		if ($emailCount == 0) {
+		if (($emailCount == 0) && ($phoneCount ==0)) {
+			$insertQuery = $conn->query("INSERT INTO tbl_users (user_name,user_phone,user_email,user_image,user_designation,user_place_of_posting,user_status)  VALUES ('" . $name . "','" . $phone . "','" . $email . "','no_user_image.png','" . $designation . "','" . $place_of_posting . "',1)");
+			
+			if($insertQuery){
+				$response['message'] = "You are successfully Registered at Cybercrimedetective.com";
+				$response['success'] = true;
+				}else{
+				$response['message'] = "OOPS! Something Went Wrong Please Try After Sometime!";
+				$response['success'] = false;			
+			}
+			
+		}
+		
+		/*$ChecMailAct = $conn->query("SELECT * FROM tbl_users where user_email='" . $email . "' and user_status =0 ");
+			$mailCount = mysqli_num_rows($ChecMailAct);
+			if ($mailCount >= 1) {
+			$response['message'] = "Your Account Is Not Activated.! Please Try Again";
+			$response['success'] = false;
+		}*/
+		/*if ($emailCount == 0) {
 			$activate_code = rand(0, 100000);
 			$insertQuery = $conn->query("INSERT INTO tbl_users (user_name,user_phone,user_email,user_image,user_designation,user_place_of_posting,activate_link,user_status)  VALUES ('" . $name . "','" . $phone . "','" . $email . "','no_user_image.png','" . $designation . "','" . $place_of_posting . "','" . $activate_code . "',0)");
 			
 			if ($insertQuery) {
-				$subject = 'Signup | Verification';
-				$message = '<html>
-				<head>
-				<title>Thank You for signing up!</title>
-				</head>
-				<body align="center">
-				<h3>Thank You for signing up!<h3>
-				<p>Your account has been created Succesfully to activate your link please click on activation link.<p>
-				<table align="center">
-				<tr><td>Email  </td><td>' . $email . '</td></tr>	
-				<tr><td>Phone Number  </td><td>' . $phone . '</td></tr>	
-				</table>
-				<a href="' . SITE_ADMIN_URL . 'controller.php?activate_link=' . $activate_code . '"><input type="button" value="Activation Link"></a>
-				</body>
-				</html>';
-				
-				$headers = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-				$headers .= 'From:' . FROM_MAIL . "\r\n";
-				$sendmail = mail($email, $subject, $message, $headers);
-				$response['message'] = "Thank You! Check Your Email To Activate Your Account";
-				$response['success'] = true;
-				} else {
-				$response['message'] = "OOPS! Something Went Wrong Please Try After Sometime!";
-				$response['success'] = false;
+			$subject = 'Signup | Verification';
+			$message = '<html>
+			<head>
+			<title>Thank You for signing up!</title>
+			</head>
+			<body align="center">
+			<h3>Thank You for signing up!<h3>
+			<p>Your account has been created Succesfully to activate your link please click on activation link.<p>
+			<table align="center">
+			<tr><td>Email  </td><td>' . $email . '</td></tr>	
+			<tr><td>Phone Number  </td><td>' . $phone . '</td></tr>	
+			</table>
+			<a href="' . SITE_ADMIN_URL . 'controller.php?activate_link=' . $activate_code . '"><input type="button" value="Activation Link"></a>
+			</body>
+			</html>';
+			
+			$headers = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$headers .= 'From:' . FROM_MAIL . "\r\n";
+			$sendmail = mail($email, $subject, $message, $headers);
+			$response['message'] = "Thank You! Check Your Email To Activate Your Account";
+			$response['success'] = true;
+			} else {
+			$response['message'] = "OOPS! Something Went Wrong Please Try After Sometime!";
+			$response['success'] = false;
 			}
-		}
+		}*/
 		echo json_encode($response);
 		exit;
 	}
@@ -73,9 +92,6 @@
 		$checkparticipentCount = mysqli_num_rows($LoginQuery);
 		if ($checkparticipentCount == 1) {
 			$user = $LoginQuery->fetch_assoc();
-			// echo "<pre>";
-			// print_r($_POST);
-			// exit;
 			
 			
 			if ($user['user_status'] != 1) {

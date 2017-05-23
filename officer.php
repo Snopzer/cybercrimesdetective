@@ -1,3 +1,13 @@
+<?php 
+	session_start();
+	//echo "control here";
+	//echo $_SESSION['id_user'];
+	//exit;
+	if(!isset($_SESSION['id_user'])){
+		header('Location:index.php');
+		exit;
+	}
+	?>
 <!DOCTYPE HTML>
 <html ng-app="myApp">
 	<head>
@@ -11,6 +21,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	</head>
 	<body class="left-sidebar">
+	
 		<div id="page-wrapper">
 			
 			<!-- Header -->
@@ -25,8 +36,10 @@
 			
 			<!-- Main -->
 			<div id="main-wrapper">
+			
 				<div class="container site-container">
 					<div class="eh row">
+					
 						<div class="3u 12u(mobile)">
 							<section class="box" ng-controller="MainCtrl">
 								<header>

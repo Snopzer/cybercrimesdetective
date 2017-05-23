@@ -263,6 +263,7 @@
 												<input type="text" name="phone"  id="phone"  required>
 												<label>Phone number</label>
 											</div>
+											<a href="login.php" class="center">Login Here .?</a>
 											<div style="text-align:center;">
 												<input  type="submit" style="margin-top: 0px;
 												margin-left: 0px; max-width: 81%;">

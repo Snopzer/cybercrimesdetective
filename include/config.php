@@ -7,8 +7,10 @@
 		define(DBPASSWORD, '');
 		define(DBNAME, 'cybercrimesdetective');
 		//Local URL
-		define(BASE_URL, "http://localhost/cybercrimesdetective/");
-		define(FROM_MAIL, "inststudent@yopmail.com");
+		define(BASE_URL, "http://localhost/cid/");
+		define(OFFICER_URL, "http://localhost/cid/officer.php");
+		define(SITE_NAME, "http://localhost/cid/");
+		//define(FROM_MAIL, "inststudent@yopmail.com");
 	}	
 	else if($_SERVER['HTTP_HOST'] =='amerytech.net')	{
 		

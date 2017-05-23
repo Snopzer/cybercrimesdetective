@@ -9,6 +9,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-99761148-1', 'auto');
+			ga('send', 'pageview');
+			
+		</script>
+		
+		
 	</head>
 	<body class="left-sidebar">
 		<div id="page-wrapper">
@@ -66,14 +79,14 @@
 									<li>West Bengal</li>
 								</ul>
 								<!--<h3>Andhra Pradesh:</h3>
-								<ul class="contact">
+									<ul class="contact">
 									
-										<p> 
-											Address : Cyber Crime Police Station,<br /> 
-											3rd Floor, CID Building, <br />
-											AC Guards,<br /> 
-											Hyderabad -500 004.<br />
-										</p>
+									<p> 
+									Address : Cyber Crime Police Station,<br /> 
+									3rd Floor, CID Building, <br />
+									AC Guards,<br /> 
+									Hyderabad -500 004.<br />
+									</p>
 									
 								</ul>-->
 							</section>
@@ -85,7 +98,7 @@
 							<article class="box post">
 								<section>
 									<header>
-									<h3 class="blink-tag center">Cyber Crimes - <span class="green">Prevention</span>, <span class="orange">Reporting </span>&amp; <span class="red">Detection</span>.</h3>
+										<h3 class="blink-tag center">Cyber Crimes - <span class="green">Prevention</span>, <span class="orange">Reporting </span>&amp; <span class="red">Detection</span>.</h3>
 									</header>
 									<ul class="dates">
 										<li>
@@ -151,6 +164,12 @@
 											<a class="notifications" href="docs/13 - Model e-mail request to PaymentGateways .pdf" target="_blank">13 - Model e-mail request to PaymentGateways</a>
 										</li>
 									</ul>
+									
+									
+									<header>
+										<a href="login.php"><h3 class="blink-tag"> For Investigating Officers</h3></a>
+									</header>
+									
 									<b>For further clarifications do contact:</b><br />
 									Ravi K Reddy @ CrimeInvestigatingOfficer@gmail.com
 								</section>
@@ -160,12 +179,12 @@
 						<!--<div class="3u 12u(mobile)">
 							<section class="box">
 							
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3 class="center">FORUM</h3>
-									<h3 class="center">COMING SOON</h3>
-								</header>
-								
+							<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+							<header>
+							<h3 class="center">FORUM</h3>
+							<h3 class="center">COMING SOON</h3>
+							</header>
+							
 							</section>
 							
 						</div>-->
@@ -202,28 +221,28 @@
 
 <script type="text/javascript">
 	var app = angular.module('myApp', ['ngDialog']);
-
+	
 	app.controller('MainCtrl', function ($scope, ngDialog) {
 		$scope.clickToOpen = function () {
 			ngDialog.open({
-			
-			template:'<div class="ngdialog-message">'+
-					'<h3>Andhra Pradesh</h3>'+
-					'<p> </p>'+
-					'<p>Address : Cyber Crime Police Station,<br /> 3rd Floor, CID Building, <br />AC Guards,<br /> Hyderabad -500 004</p>'+
-					'</div>'+
-					'<div class="ngdialog-buttons"><button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button></div>',
+				
+				template:'<div class="ngdialog-message">'+
+				'<h3>Andhra Pradesh</h3>'+
+				'<p> </p>'+
+				'<p>Address : Cyber Crime Police Station,<br /> 3rd Floor, CID Building, <br />AC Guards,<br /> Hyderabad -500 004</p>'+
+				'</div>'+
+				'<div class="ngdialog-buttons"><button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button></div>',
 				plain: true,
 				className: 'ngdialog-theme-default'
-							}); 
+			}); 
 			
 		};
 	});
-
+	
 	
 	$("#statesList").hide();
 	$("#showStatesList").on("click",function(){
 		$("#statesList").show();
 	});
 	
-	</script>
+</script>
