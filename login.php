@@ -2,132 +2,9 @@
 	ob_start();
 	session_start();
 	include_once('include/config.php'); 
-	// include_once('include/checklogin.php');
+	include_once('include/header.php'); 
 ?>	
-<!DOCTYPE HTML>
-<html ng-app="myApp">
-	<head>
-		<title>Cybercrimesdetective.com Cyber Crimes - Prevention, Reporting &amp; Detection.</title>
-		<meta charset="utf-8" />
-		<meta name="description" content="www.cybercrimesdetective.com Cyber Crimes - Prevention, Reporting &amp; Detection.">
-		<meta name="keywords" content="www.cybercrimesdetective.com Cyber Crimes - Prevention, Reporting &amp; Detection.">
-		<meta name="author" content="B. Ravi Kumar Reddy">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-		<style>
-			* { box-sizing:border-box; }
-			
-			/* basic stylings ------------------------------------------ */
-			
-			h2 		 { 
-			text-align:center; 
-			margin-bottom:50px; 
-			}
-			h2 small { 
-			font-weight:normal; 
-			color:#888; 
-			display:block; 
-			}
-			.footer 	{ text-align:center; }
-			.footer a  { color:#53B2C8; }
-			
-			/* form starting stylings ------------------------------- */
-			.group 			  { 
-			position:relative; 
-			margin-bottom:15px;
-			max-width: 30 %;
-			margin-left:0px;
-			}
-			input 				{
-			font-size:18px;
-			padding:10px 10px 10px 5px;
-			display:block;
-			width:auto;
-			border:none;
-			border-bottom:1px solid #757575;
-			}
-			input:focus 		{ outline:none; }
-			
-			/* LABEL ======================================= */
-			label 				 {
-			color:#999; 
-			font-size:18px;
-			font-weight:normal;
-			position:absolute;
-			pointer-events:none;
-			left:5px;
-			top:10px;
-			transition:0.2s ease all; 
-			-moz-transition:0.2s ease all; 
-			-webkit-transition:0.2s ease all;
-			}
-			
-			/* active state */
-			input:focus ~ label, input:valid ~ label 		{
-			top:-20px;
-			font-size:14px;
-			color:#5264AE;
-			}
-			
-			/* BOTTOM BARS ================================= */
-			.bar 	{ position:relative; display:block; width:300px; }
-			.bar:before, .bar:after 	{
-			content:'';
-			height:2px; 
-			width:0;
-			bottom:1px; 
-			position:absolute;
-			background:#5264AE; 
-			transition:0.2s ease all; 
-			-moz-transition:0.2s ease all; 
-			-webkit-transition:0.2s ease all;
-			}
-			.bar:before {
-			left:50%;
-			}
-			.bar:after {
-			right:50%; 
-			}
-			
-			/* active state */
-			input:focus ~ .bar:before, input:focus ~ .bar:after {
-			width:50%;
-			}
-			
-			/* HIGHLIGHTER ================================== */
-			.highlight {
-			position:absolute;
-			height:60%; 
-			width:100px; 
-			top:25%; 
-			left:0;
-			pointer-events:none;
-			opacity:0.5;
-			}
-			
-			/* active state */
-			input:focus ~ .highlight {
-			-webkit-animation:inputHighlighter 0.3s ease;
-			-moz-animation:inputHighlighter 0.3s ease;
-			animation:inputHighlighter 0.3s ease;
-			}
-			
-			/* ANIMATIONS ================ */
-			@-webkit-keyframes inputHighlighter {
-			from { background:#5264AE; }
-			to 	{ width:0; background:transparent; }
-			}
-			@-moz-keyframes inputHighlighter {
-			from { background:#5264AE; }
-			to 	{ width:0; background:transparent; }
-			}
-			@keyframes inputHighlighter {
-			from { background:#5264AE; }
-			to 	{ width:0; background:transparent; }
-			}
-		</style>
-	</head>
+
 	<body class="left-sidebar">
 		<div id="page-wrapper">
 			
@@ -159,16 +36,15 @@
 									<div id="success_message" class="alert alert-success" style="display:none;"><strong>Success!</strong> Indicates a successful  </div>
 									<div id="warning_message"  class="alert alert-danger" style="display:none;"> <strong>Danger!</strong> Indicates a dangerous </div>
 									<form id="loginForm">
+										<label>PHONE NUMBER</label>
 										<div class="group">      
 											<input type="text" name="phone" id="phone"  required>
-											<label>PHONE NUMBER</label>
 										</div>
 										<a href="register.php">Register Now</a>
 										<div class="group" style="text-align: center;">      
-											<input type="submit">
+											<input type="submit" value="Login">
 										</div>
 									</form>
-									
 								</section>
 							</article>
 							
